@@ -1,0 +1,211 @@
+/* Global box-sizing rule */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* General page styling */
+#courses {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+/* Course Section Styling */
+#courses .course-section {
+    padding: 60px 20px; /* Default padding */
+}
+
+/* Section Title Styling */
+#courses .section-title {
+    text-align: center;
+    font-size: 2.8em;
+    color: #333;
+    margin-bottom: 40px;
+    font-weight: 600;
+}
+
+/* Container for the grid of cards */
+#courses .card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* For larger cards */
+    gap: 25px;
+    padding: 25px;
+    max-width: 1150px; /* Max 3 cards of ~350px + gaps + padding */
+    margin: 0 auto; /* Centers the container */
+}
+
+/* Individual card styling */
+#courses .card {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border: 1px solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    max-width: 380px; /* Restored original max-width */
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%; /* Helps with centering and responsiveness within grid cell */
+}
+
+#courses .card-image-container {
+    position: relative;
+}
+
+#courses .card-image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+#courses .discount-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: rgba(106, 74, 218, 0.9);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.8em;
+    font-weight: bold;
+    transform-origin: center;
+    animation: glow-badge 2.5s ease-in-out infinite;
+}
+
+#courses .card-content {
+    padding: 20px 25px 25px 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+#courses .info-boxes-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 25px; /* Restored original margin */
+}
+
+#courses .info-box {
+    background-color: #f7f7f9;
+    border-radius: 8px;
+    padding: 10px 15px; /* Restored original padding */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-grow: 1;
+    flex-basis: 0; /* Ensures equal width distribution */
+    min-width: 120px; /* Restored original min-width */
+}
+
+#courses .icon {
+    margin-right: 8px;
+    font-size: 1.2em; /* Restored original size */
+    color: #4a90e2;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+#courses .info-text {
+    font-size: 0.9em; /* Restored original size */
+    color: #555;
+    line-height: 1;
+}
+
+#courses .diploma-label {
+    font-size: 0.8em; /* Restored original size */
+    color: #888;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+#courses .course-title {
+    font-size: 1.6em; /* Restored original size */
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px; /* Restored original margin */
+    line-height: 1.2;
+}
+
+#courses .skills-list {
+    font-size: 0.9em; /* Restored original size */
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 25px; /* Restored original margin */
+    flex-grow: 1;
+}
+
+#courses .cta-button {
+    display: block;
+    width: 100%;
+    background-color: #2979ff;
+    color: white;
+    border: none;
+    padding: 14px 20px; /* Restored original padding */
+    border-radius: 8px;
+    font-size: 1.1em; /* Restored original font size */
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: auto;
+}
+
+#courses .cta-button:hover {
+    background-color: #1c67ff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1190px) {
+    /* Grid will naturally adjust to 2 columns if needed due to auto-fit */
+}
+
+@media (max-width: 780px) {
+    /* Grid will naturally adjust to 1 or 2 columns */
+    #courses .section-title {
+        font-size: 2.5em;
+    }
+}
+
+@media (max-width: 420px) { /* Breakpoint for mobile view fine-tuning */
+    #courses .course-section {
+        padding: 40px 10px; /* Reduced horizontal padding for section */
+    }
+    #courses .card-container {
+        padding: 10px; /* Reduced padding for card container */
+        gap: 15px;
+        grid-template-columns: 1fr; /* Force single column for mobile centering */
+    }
+    /* .card will be centered by its own margin:auto within the 1fr column */
+
+    #courses .section-title {
+        font-size: 2.2em; /* Slightly smaller title */
+        margin-bottom: 30px;
+    }
+    #courses .course-title {
+        font-size: 1.4em; /* Adjusted from original card's small screen styles */
+    }
+    #courses .info-box {
+        min-width: 0; /* Allow info boxes to shrink */
+        padding: 8px 10px; /* Adjusted from original card's small screen styles */
+    }
+    #courses .icon {
+        font-size: 1.1em; /* Adjusted from original card's small screen styles */
+    }
+    #courses .info-text {
+        font-size: 0.85em; /* Adjusted from original card's small screen styles */
+    }
+    #courses .cta-button {
+        padding: 12px 15px;
+        font-size: 1em;
+    }
+}
+
+@keyframes glow-badge {
+    0% { box-shadow: 0 0 4px rgba(255, 255, 255, 0.3); }
+    50% { box-shadow: 0 0 12px 4px rgba(255, 255, 255, 0.7); }
+    100% { box-shadow: 0 0 4px rgba(255, 255, 255, 0.3); }
+}

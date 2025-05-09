@@ -1,0 +1,97 @@
+/* Basic Reset and Font Setup */
+#intro-head * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    /* Base font size for rem calculation */
+    /* font-size: 16px; */
+}
+
+#intro-head{
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: #ffffff; /* White background */
+    color: #333333;
+    /* --- REMOVED: No longer forcing full viewport height or centering content here --- */
+    /* min-height: 100vh; */
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+
+/* Hero Section Styling */
+#intro-head .hero-section {
+    display: flex; /* Kept to center content *within* the 25vh block */
+    justify-content: center; /* Kept to center content */
+    align-items: center; /* Kept to center content */
+    width: 100%;
+    /* --- CHANGED: Set height to 25vh --- */
+    height: 25vh; /* Instead of min-height: 100vh */
+    text-align: center;
+    padding: 20px; /* You might adjust padding based on the smaller height */
+    position: relative;
+    overflow: hidden; /* Keeps background text contained */
+}
+
+/* Faded Background Text (AESTHETIX) with Gradient */
+#intro-head .hero-section::before {
+    content: 'AESTHETIX';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Font size adjusted slightly, clamp is helpful for responsiveness */
+    font-size: clamp(30px, 10vw, 120px); /* Adjusted clamp values for smaller height */
+    font-weight: 900;
+    z-index: 0;
+    user-select: none;
+    pointer-events: none;
+    white-space: nowrap;
+
+    /* Top-to-bottom faint grey gradient */
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.06), /* Slightly darker faint grey at top */
+        rgba(0, 0, 0, 0.02)  /* Very faint grey at bottom */
+    );
+    -webkit-background-clip: text; /* Apply gradient to text shape */
+    background-clip: text;
+    color: transparent; /* Hide original text color */
+}
+
+/* Primary Heading (Learn from Experts) with Gradient */
+#intro-head .hero-section h1 {
+    position: relative; /* Ensure it's relative */
+    top: 3px;
+    
+    /* font-weight: 700; */
+    line-height: 1.1;
+    position: relative;
+    z-index: 1; /* Ensure it's above the background text */
+    /* Font size adjusted slightly, clamp helps */
+     font-size: clamp(1.8rem, 1rem + 4vw, 3.5rem); /* Adjusted clamp values for smaller height */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.05);
+
+    /* Light blue gradient */
+    background: linear-gradient(to right, #3aa1d9, #0570BC);
+    -webkit-background-clip: text; /* Apply gradient to text shape */
+    background-clip: text;
+    color: transparent; /* Hide original text color */
+}
+
+/* Media Queries for fine-tuning if needed */
+/* Media query might not be strictly needed anymore for basic height, */
+/* but keep it if you need specific adjustments at small widths */
+@media (max-width: 480px) {
+     #intro-head .hero-section::before {
+         /* Keep centering adjustment if needed */
+         /* top: 49%; */ /* May not be necessary with flex centering */
+     }
+     #intro-head .hero-section h1 {
+         /* Clamp function handles resizing, but you can override */
+          font-size: clamp(1.6rem, 1rem + 5vw, 3rem); /* Example adjustment */
+     }
+}

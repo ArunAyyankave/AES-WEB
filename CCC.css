@@ -1,0 +1,668 @@
+/* Clientele Carousel start ====================================================================================================*/
+#custom-section {
+    all: unset;
+}
+
+/* #cl-cr{
+   
+} */
+#custom-section * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#custom-section .cl-carousel {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; */
+    /* height: 200px; */
+    height: 300px;
+    background-color: #f5f5f5;
+}
+
+#custom-section .carousel-container {
+    overflow: hidden;
+    width: 80%;
+    /* Adjust width as needed */
+    max-width: 1200px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#custom-section .carousel {
+    display: flex;
+    gap: 20px;
+    animation: scroll 20s linear infinite;
+}
+
+#custom-section .carousel img {
+    height: 80px;
+    /* Set a consistent height for logos */
+    object-fit: contain;
+    transition: transform 0.3s;
+}
+
+#custom-section .carousel img:hover {
+    transform: scale(1.1);
+    /* Enlarge logo slightly on hover */
+}
+
+/* Keyframes for seamless scroll */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-50% - 20px));
+        /* Move exactly half of the duplicated logos */
+    }
+}
+
+/* Pause animation on hover */
+#custom-section .carousel-container:hover .carousel {
+    animation-play-state: paused;
+}
+
+/* Clientele Carousel end ====================================================================================================*/
+
+
+/* Clientele start ====================================================================================================*/
+#custom-section .clientele-section {
+    background-color: #f9f9f9;
+    /* padding: 40px 20px; */
+    padding: 100px 20px;
+}
+
+#custom-section .container {
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+#custom-section .clientele-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    /* Space between image and text */
+}
+
+#custom-section .clientele-image {
+    width: 200px;
+    /* Adjust width as needed */
+    height: auto;
+    border-radius: 8px;
+    /* Optional: Adds rounded corners */
+}
+
+#custom-section .text-content {
+    flex: 1;
+    /* Allows text content to take available space */
+}
+
+#custom-section .section-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#custom-section .section-subtitle {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Responsive Styling */
+@media (max-width: 600px) {
+    #custom-section .clientele-content {
+        flex-direction: column;
+        /* Stacks image and text on small screens */
+        text-align: center;
+    }
+
+    #custom-section .clientele-image {
+        margin-bottom: 20px;
+    }
+}
+
+/* Clientele end ====================================================================================================*/
+
+/* recruiters start ====================================================================================================*/
+#custom-section .rec-body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f1f5f9;
+}
+
+#custom-section .recruiters-section {
+
+    /* background: rgba(255, 255, 255, 0.75); */
+    backdrop-filter: blur(8px);
+
+
+    width: 80%;
+    max-width: 800px;
+    text-align: center;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#custom-section .recruiters-section h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+    color: #333;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border-bottom: 2px solid #4a90e2;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+#custom-section .recruiter-icons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    margin-top: 20px;
+}
+
+#custom-section .recruiter-icons img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 10px;
+    border-radius: 8px;
+    /* background-color: #f9f9f9; */
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+}
+
+#custom-section .recruiter-icons img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Grid */
+@media (min-width: 992px) {
+    #custom-section .recruiter-icons {
+        grid-template-columns: repeat(5, 1fr);
+        /* 6 icons per row */
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    #custom-section .recruiter-icons {
+        grid-template-columns: repeat(4, 1fr);
+        /* 4 icons per row on medium screens */
+    }
+}
+
+@media (max-width: 767px) {
+    #custom-section .recruiter-icons {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 icons per row on smaller screens */
+    }
+}
+
+/* recruiters end ====================================================================================================*/
+
+
+/* feedback start ====================================================================================================*/
+#f-section .feed-body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f1f5f9;
+    background: linear-gradient(to bottom, #4a90e2 50%, transparent 50%);
+}
+
+#f-section .feedback-section {
+    width: 90%;
+    max-width: 1200px;
+    text-align: center;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+#f-section .feedback-section h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+    color: #333;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border-bottom: 2px solid #4a90e2;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+#f-section .feedback-cards {
+    display: flex;
+    transition: transform 0.3s ease;
+}
+
+#f-section .feedback-card {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 0 0 100%;
+    max-width: 100%;
+    /* Default to one card per row */
+    margin-right: 20px;
+}
+
+#f-section .feedback-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-top: 15px;
+}
+
+#f-section .feedback-card .student-name {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+    margin: 10px 0 5px;
+}
+
+#f-section .feedback-card .student-title {
+    font-size: 0.9em;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+#f-section .feedback-card .feedback-text {
+    font-size: 0.95em;
+    color: #555;
+    line-height: 1.5;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 2px solid #4a90e2;
+}
+
+/* Arrows */
+#f-section .arrow-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2em;
+    color: #333;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    z-index: 10;
+}
+
+#f-section .arrow-button:hover {
+    color: #4a90e2;
+}
+
+#f-section .left-arrow {
+    /* left: 10px; */
+    left: 2.5px;
+}
+
+#f-section .right-arrow {
+    /* right: 10px; */
+    right: 2.5px;
+}
+
+/* Media Queries */
+@media (min-width: 600px) {
+    #f-section .feedback-card {
+        flex: 0 0 48%;
+        /* Two cards per row */
+        max-width: 48%;
+    }
+}
+
+@media (min-width: 900px) {
+    #f-section .feedback-card {
+        /* Three cards per row */
+        /* flex: 0 0 31%; */
+        flex: 0 0 32.2%;
+        max-width: 32.2%;
+    }
+}
+
+/* feedback end ====================================================================================================*/
+
+/* Certificate start ====================================================================================================*/
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.certificate-container {
+    display: flex;
+    max-width: 800px;
+    margin: 50px auto;
+    border: 2px solid #4CAF50;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.certificate-image {
+    width: 40%;
+    object-fit: cover;
+}
+
+.certificate-details {
+    padding: 20px;
+    background-color: #f9f9f9;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.certificate-details h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.certificate-details p {
+    color: #555;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .certificate-container {
+        flex-direction: column;
+    }
+
+    .certificate-image,
+    .certificate-details {
+        width: 100%;
+    }
+}
+
+/* Certificate end ====================================================================================================*/
+
+/* Intro start ====================================================================================================*/
+#intro-page {
+    /* height: 100vh; */
+    height: 70vh;
+    /* background-color: red; */
+}
+
+@media (max-width: 1024px) {
+
+    /* Adjust 1024px to the breakpoint for laptops */
+    #intro-page {
+        height: unset;
+        /* Removes the value, resetting to inherit or default */
+    }
+}
+
+/* Reset */
+#intro-section * {
+    all: unset;
+    display: block;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.intro-body {
+    font-family: "Georgia", serif;
+    /* background-color: #dce1e789; */
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; */
+    /* height: 50vh; */
+    overflow: hidden;
+    position: relative;
+    padding: 60px;
+}
+
+/* Reset default styles */
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+
+#intro-section {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Styling for the intro section */
+#intro-section .intro {
+    background-image: url('your-image.jpg');
+    /* Replace with your image */
+    background-size: cover;
+    background-position: center;
+    /* height: 100vh; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* color: white; */
+    padding: 0 20px;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Intro content */
+#intro-section .intro .content {
+    max-width: 800px;
+}
+
+/* Heading */
+#intro-section .intro h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+/* Paragraph */
+#intro-section .intro p {
+    font-size: 1.2rem;
+    /* margin-bottom: 30px; */
+}
+
+/* Button styling */
+#intro-section .intro .btn {
+    display: inline-block;
+    background-color: #0066cc;
+    color: white;
+    padding: 12px 30px;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#intro-section .intro .btn:hover {
+    background-color: #004d99;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    #intro-section .intro h1 {
+        font-size: 2.5rem;
+    }
+
+    #intro-section .intro p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #intro-section .intro h1 {
+        font-size: 2rem;
+    }
+
+    #intro-section .intro p {
+        font-size: 0.9rem;
+    }
+
+    #intro-section .intro .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+@keyframes expand {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 80px;
+    }
+}
+
+/* Heading */
+#intro-section .intro-section h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #4a90e2;
+    text-transform: uppercase;
+    line-height: 1.2;
+    display: inline-block;
+    background: linear-gradient(120deg, transparent 55%, rgba(74, 144, 226, 0.4) 50%);
+}
+
+/* Subtext */
+#intro-section .intro-section .subtext {
+    color: #333;
+    /* font-size: 1rem; */
+    font-size: 1.25rem;
+    line-height: 1.6;
+    text-align: center;
+    background: rgba(74, 144, 226, 0.05);
+    padding: 15px;
+    transform: rotate(-2deg);
+    border-radius: 8px;
+    display: inline-block;
+    margin: 20px 0;
+}
+
+/* Highlight Style */
+#intro-section .highlight {
+    color: #4a90e2;
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* Call-to-Action Button */
+#intro-section .intro-section a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    text-decoration: none;
+    color: #121212;
+    background-color: #ffd700;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+}
+
+#intro-section .intro-section a:hover {
+    background-color: #fff;
+    color: #121212;
+    transform: translateY(-3px);
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .intro-body {
+        height: auto;
+        padding: 40px 20px;
+    }
+
+    .intro-section h1 {
+        font-size: 2rem;
+    }
+
+    .intro-section .subtext {
+        font-size: 0.9rem;
+    }
+
+    .intro-section a {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+
+    .decorative-line {
+        width: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .intro-section h1 {
+        font-size: 1.8rem;
+    }
+
+    .intro-section .subtext {
+        font-size: 0.8rem;
+        padding: 10px;
+    }
+
+    .intro-section a {
+        padding: 7px 12px;
+        font-size: 0.8rem;
+    }
+}
+
+/* Intro end ====================================================================================================*/
+
+
+.rec-body {
+    font-family: "Georgia", serif;
+    background-color: #dce1e789;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+    position: relative;
+    padding: 60px;
+}
+
+/* Diagonal Background Shapes */
