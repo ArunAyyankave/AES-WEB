@@ -72,65 +72,386 @@
 /* Clientele Carousel end ====================================================================================================*/
 
 
-/* Clientele start ====================================================================================================*/
-#custom-section .clientele-section {
-    background-color: #f9f9f9;
-    /* padding: 40px 20px; */
-    padding: 100px 20px;
+/* Clientele new start ====================================================================================================*/
+#clientele {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    background-color: #ffffff;
+    color: #333;
 }
 
-#custom-section .container {
-    max-width: 80%;
+#clientele .container {
+    width: 90%;
+    max-width: 1200px;
     margin: 0 auto;
+    padding: 20px;
 }
 
-#custom-section .clientele-content {
+/* === Section Styles === */
+#clientele .clientele-section {
+    /* padding: 100px 0; */
+    background-color: #f8f9fa;
+    overflow: hidden;
+}
+
+#clientele .clientele-content {
     display: flex;
     align-items: center;
-    gap: 20px;
-    /* Space between image and text */
+    gap: 60px;
 }
 
-#custom-section .clientele-image {
-    width: 200px;
-    /* Adjust width as needed */
-    height: auto;
-    border-radius: 8px;
-    /* Optional: Adds rounded corners */
+/* === Collage Styles === */
+#clientele .collage-wrapper {
+    flex: 1.3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 550px;
 }
 
-#custom-section .text-content {
+#clientele .collage-container {
+    position: relative;
+    width: 500px;
+    height: 420px;
+    /* perspective: 1200px; /* Optional: Enhance 3D effect of rotation */
+}
+
+#clientele .collage-box {
+    position: absolute;
+    border-radius: 16px;
+    overflow: hidden;
+    background-color: #ffffff;
+    /* Default for image boxes */
+    box-shadow: 0 6px 18px rgba(48, 63, 102, 0.08);
+
+    /* --- Enhanced Initial Animation State --- */
+    opacity: 0;
+    /* Starts smaller, shifted down, and slightly rotated */
+    transform: scale(0.7) translateY(10px) rotate(-6deg);
+    transition: transform 0.85s cubic-bezier(0.2, 0.9, 0.3, 1),
+        /* Adjusted easing, longer duration */
+        opacity 0.6s ease-out,
+        box-shadow 0.3s ease;
+}
+
+#clientele .collage-box img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* === Solid Box Specific Colors === */
+#clientele .solid-box.box-1 {
+    background-color: #A0AEC0;
+    background-color: #2A8AD0;
+}
+
+/* Gray Blue */
+#clientele .solid-box.box-3 {
+    background-color: #ffe6a7;
+    background-color: #50A5E3;
+}
+
+/* Pale Yellow */
+#clientele .solid-box.box-5 {
+    background-color: #a8dadc;
+    background-color: #75BFF7;
+}
+
+/* Light Blue */
+#clientele .solid-box.box-8 {
+    background-color: #ffb3ba;
+    background-color: #AADBFB;
+}
+
+/* Soft Pink */
+#clientele .solid-box.box-10 {
+    background-color: #b2f7d1;
+    background-color: #D0E9FD;
+}
+
+/* Soft Mint Green */
+#clientele .solid-box.box-12 {
+    background-color: #e2e8f0;
+    background-color: #3B7EA7;
+}
+
+/* Light Gray */
+
+
+/* === Individual Box Layout === */
+/* Format: top, left, width, height */
+/* (Minor size adjustments applied to some solid boxes below) */
+
+/* Top Row */
+#clientele .box-1 {
+    top: 4%;
+    left: 2%;
+    width: 17%;
+    height: 19%;
+}
+
+/* Solid - size tweaked */
+#clientele .box-2 {
+    top: 0%;
+    left: 21%;
+    width: 34%;
+    height: 26%;
+}
+
+/* Image */
+#clientele .box-3 {
+    top: 2%;
+    left: 58%;
+    width: 18%;
+    height: 31%;
+}
+
+/* Solid - size tweaked */
+#clientele .box-4 {
+    top: 7%;
+    left: 79%;
+    width: 17%;
+    height: 19%;
+}
+
+/* Image */
+
+/* Middle Area */
+#clientele .box-5 {
+    top: 26%;
+    left: 0%;
+    width: 29%;
+    height: 21%;
+}
+
+/* Solid - size tweaked */
+#clientele .box-6 {
+    top: 29%;
+    left: 32%;
+    width: 36%;
+    height: 37%;
+}
+
+/* Image - slightly adjusted position */
+#clientele .box-7 {
+    top: 35%;
+    left: 71%;
+    width: 29%;
+    height: 20%;
+}
+
+/* Image */
+
+/* Bottom Area */
+#clientele .box-8 {
+    top: 58%;
+    left: 70%;
+    width: 27%;
+    height: 21%;
+}
+
+/* Solid - size tweaked */
+#clientele .box-9 {
+    top: 50%;
+    left: 3%;
+    width: 27%;
+    height: 24%;
+}
+
+/* Image */
+#clientele .box-10 {
+    top: 77%;
+    left: 5%;
+    width: 19%;
+    height: 18%;
+}
+
+/* Solid - size tweaked */
+#clientele .box-11 {
+    top: 68%;
+    left: 31%;
+    width: 18%;
+    height: 32%;
+}
+
+/* Image */
+#clientele .box-12 {
+    top: 69%;
+    left: 52%;
+    width: 29%;
+    height: 19%;
+}
+
+/* Solid - size tweaked */
+
+/* === Animation Trigger & Hover Effect === */
+#clientele .collage-container.visible .collage-box {
+    opacity: 1;
+    /* Final state: normal size, original position, no rotation */
+    transform: scale(1) translateY(0) rotate(0deg);
+}
+
+/* Enhanced Hover Effect */
+#clientele .collage-box:hover {
+    /* Lifts slightly, scales up more, slight counter-rotation */
+    transform: scale(1.04) translateY(-3px) rotate(1deg);
+    box-shadow: 0 12px 35px rgba(48, 63, 102, 0.18);
+    /* Enhanced shadow */
+    z-index: 10;
+}
+
+/* Staggered delays remain the same - adjust if desired */
+#clientele .collage-container.visible .box-1 {
+    transition-delay: 0.1s;
+}
+
+#clientele .collage-container.visible .box-2 {
+    transition-delay: 0.15s;
+}
+
+#clientele .collage-container.visible .box-3 {
+    transition-delay: 0.2s;
+}
+
+#clientele .collage-container.visible .box-4 {
+    transition-delay: 0.25s;
+}
+
+#clientele .collage-container.visible .box-5 {
+    transition-delay: 0.2s;
+}
+
+#clientele .collage-container.visible .box-6 {
+    transition-delay: 0s;
+}
+
+#clientele .collage-container.visible .box-7 {
+    transition-delay: 0.1s;
+}
+
+#clientele .collage-container.visible .box-8 {
+    transition-delay: 0.25s;
+}
+
+#clientele .collage-container.visible .box-9 {
+    transition-delay: 0.3s;
+}
+
+#clientele .collage-container.visible .box-10 {
+    transition-delay: 0.4s;
+}
+
+#clientele .collage-container.visible .box-11 {
+    transition-delay: 0.2s;
+}
+
+#clientele .collage-container.visible .box-12 {
+    transition-delay: 0.35s;
+}
+
+
+/* === Text Content Styles === */
+#clientele .text-content {
     flex: 1;
-    /* Allows text content to take available space */
+    max-width: 500px;
 }
 
-#custom-section .section-title {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 10px;
+#clientele .section-title {
+    font-size: 2.8em;
+    margin-bottom: 15px;
+    color: #212529;
+    font-weight: 600;
 }
 
-#custom-section .section-subtitle {
-    font-size: 1.1rem;
-    color: #555;
-    line-height: 1.6;
+#clientele .section-subtitle {
+    font-size: 1.15em;
+    color: #495057;
+    line-height: 1.7;
 }
 
-/* Responsive Styling */
-@media (max-width: 600px) {
-    #custom-section .clientele-content {
+/* === Responsive Adjustments === */
+/* (Using previous responsive styles, adjust if needed based on new layout) */
+@media (max-width: 1024px) {
+    #clientele .clientele-content {
+        gap: 40px;
+    }
+
+    #clientele .collage-wrapper {
+        min-height: 450px;
+    }
+
+    #clientele .collage-container {
+        width: 420px;
+        height: 350px;
+    }
+
+    #clientele .section-title {
+        font-size: 2.5em;
+    }
+
+    #clientele .section-subtitle {
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 768px) {
+    #clientele .clientele-content {
         flex-direction: column;
-        /* Stacks image and text on small screens */
         text-align: center;
     }
 
-    #custom-section .clientele-image {
-        margin-bottom: 20px;
+    #clientele .collage-wrapper {
+        min-height: auto;
+        margin-bottom: 40px;
+        flex: none;
+        width: 100%;
+        padding: 0 10%;
+        box-sizing: border-box;
+    }
+
+    #clientele .collage-container {
+        width: 100%;
+        max-width: 350px;
+        height: 290px;
+        margin: 0 auto;
+    }
+
+    #clientele .text-content {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    #clientele .section-title {
+        font-size: 2.2em;
+    }
+
+    #clientele .section-subtitle {
+        font-size: 1.05em;
     }
 }
 
-/* Clientele end ====================================================================================================*/
+@media (max-width: 480px) {
+    #clientele .collage-container {
+        max-width: 300px;
+        height: 250px;
+    }
+
+    #clientele .collage-box {
+        border-radius: 12px;
+    }
+
+    #clientele .section-title {
+        font-size: 2em;
+    }
+
+    #clientele .section-subtitle {
+        font-size: 1em;
+    }
+}
+
+/* Clientele new end ====================================================================================================*/
 
 /* recruiters start ====================================================================================================*/
 #custom-section .rec-body {
