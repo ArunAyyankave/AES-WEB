@@ -721,7 +721,7 @@
           <a class="btn btn-link" href="#footer">Contact Us</a>
           <a class="btn btn-link" href="#services">Our Services</a>
           <a class="btn btn-link">Terms & Condition</a>
-          <a class="btn btn-link">Support</a>
+          <a class="btn btn-link" href="./privacy_policy/privacy_policy.html">Privacy Policy</a>
         </div>
         <div class="col-lg-3 col-md-6">
           <iframe
@@ -800,6 +800,19 @@
   <script type="text/javascript" src="js/plugins.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
   <script type="text/javascript" src="js/script.js"></script>
+
+  <script>
+  window.addEventListener('load', () => {
+    const hash = window.location.hash;
+    if (hash) {
+      const target = document.querySelector(hash);
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  });
+</script>
+
 </body>
 
 </html>

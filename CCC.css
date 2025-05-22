@@ -987,3 +987,7 @@
 }
 
 /* Diagonal Background Shapes */
+
+[id] {
+  scroll-margin-top: 80px;
+}
